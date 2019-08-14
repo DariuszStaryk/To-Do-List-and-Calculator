@@ -11,7 +11,7 @@
     
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin-ext" rel="stylesheet">      <!-- font-family: 'Roboto', sans-serif; -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">  <!-- font-family: 'Roboto', sans-serif; -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://unpkg.com/mathjs/dist/math.min.js"></script>
 
@@ -22,37 +22,70 @@
     
     .main {background-color: transparent; width: 100%; height: 700px; border-left: 20px solid white; border-right: 20px solid white; margin-top: 20px; position: relative; border-radius: 15px;}
     .main_img {width: 100%; height: 100%;  opacity: 0.6; object-fit: cover; border-radius: 15px;}
-    .main_internal {position: absolute; top: 0; left: 0; background-color: transparent; width: 100%; height: 100%; display: flex; justify-content: space-evenly; align-items: center;}
-
-    .image_source_unsplash {bottom: 21px; right: 22px; height: fit-content; padding: 2px 4px !important; font-size: 11px !important; letter-spacing: 0.4px !important; position: absolute; background-color:#ffffff38 !important; color:rgba(255, 255, 255, 0.6) !important;}
-    .image_source_unsplash svg {fill:rgba(255, 255, 255, 0.6) !important;}
-    .image_source_unsplash:hover {background-color: rgba(0, 0, 0, 0.5) !important; color: white !important;}
-    .image_source_unsplash:hover svg {color: white !important; fill: white !important;}
-
-    .ToDo {background-color:chocolate; max-width: 400px; width: 100%; height: 200px; margin-left: 20px; margin-right: 20px;}
+    .main_internal {position: absolute; top: 0; left: 0; background-color: transparent; padding: 20px; width: 100%; height: 100%; display: flex; justify-content: space-evenly; align-items: center;}
     
-    .Calculator { box-sizing: border-box; back5ground-color: bisque; width: 250px; height: auto; border: 2px solid white; margin-left: 20px; margin-right: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 10px; overflow: hidden;}
+    .ToDo {background-color:#f5f5f5; overflow: hidden; op4acity: 0.6; max-width: 600px; width: 100%; height: auto; padding: 0px; border: 2px solid #fffdfd; border-radius: 15px; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;}
+    .ToDo_Header {background: linear-gradient(to right, #563dc4, #acb0ff); padding: 8px; border-bottom: 1px solid white; width: 100%; height: 100px; margin-bottom: 30px; box-shadow: 2px 4px 6px 2px #cccccc; display: flex; justify-content: flex-start; align-items: center; position: relative;}
+    
+    .ToDo_Header_Left {backgr5ound-color:#f8e299; width: 80px; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+    .ToDo_Header_Left p {margin: 0px; color: white; margin-bottom: -2px;}
+    .ToDo_Header_Left p {font-weight: bold; letter-spacing: 1px;}
+    .ToDo_Header_Left p:nth-child(2) {fo4nt-weight: 500; letter-spacing: 1px;}
+    .ToDo_Header_Left p:nth-child(3) {fo4nt-weight: 300; letter-spacing: 1px;}
+    
+    .ToDo_Header_Middle {backg6round-color:#f89999; height: 100%; display: flex; flex-direction: column; justify-content: space-evenly; align-items: flex-start; padding-top: 4px;}
+    .ToDo_Header_Middle p {margin: 0px; font-size: 14.8px; color: white;}
+    .ToDo_Header_Middle p label { backgrou5nd-color:#f89999;  width: 68px; display: inline-block; text-align: right; margin-left: 10px; margin-right: 8px;}
+    .ToDo_Header_Middle p select {backg6round-color: red; margin-left: -4px; padding-left: 0px;}
+    .ToDo_Header_Middle p input {backg6round-color: red; padding-left: 4px;}
+    .ToDo_Header_Middle p select, .ToDo_Header_Middle p input {font-size: 13.8px; width: 240px; display: inline-block; height: 20px; border-radius: 5px; border: 1px solid navy}
+    
+    .ToDo_Header_Right {background: linear-gradient(to right, #FFC371, rgb(255, 72, 87)); position: absolute; top: 50px; right: 10%; width: 68px; height: 68px; border: 2px solid white; margin: 0px; margin-left: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 100%; cursor: pointer;}
+    .ToDo_Header_Right p {backg5round-color:#39f827; font-family: 'Roboto', sans-serif; height: 15px; font-size: 16px; letter-spacing: 0.4px; font-weight: bold; color: white; margin: 0px; display: flex; justify-content: center; align-items: center;}
+    .ToDo_Header_Right:hover {background:orangered; box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.603); border: 2px solid white; col5or: #fffffff5; tr4ansition: 0.2s;}
+    .ToDo_Header_Right:active {transform: scale(0.9); transition: 0.2s;}
+
+    .ToDo_List {background-color:white; opacity: 1.0; width: 90%; height: 70px; bo5rder: 1px solid #ebebeb; border-radius: 15px; padding: 16px; margin-bottom: 20px; box-shadow: 2px 2px 6px 2px #cccccc; overflow: hidden; display: flex; justify-content: center; align-items: center;}
+    .ToDo_List:last-child {margin-bottom: 30px;}
+    
+    .ToDo_List_Left {bac5kground-color:rgb(255, 242, 183); width: 14%; height: 100%; padding-right: 4px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 5px solid #eeeeee;}
+    .ToDo_List_Left i {color: rgb(100, 100, 255); font-size: 24px; margin-bottom: 6px;}
+    .ToDo_List_Left p {margin: 0px; color: black; font-size: 14px; text-transform: uppercase; font-weight: bold; letter-spacing: 0.4px;}
+
+    .ToDo_List_Middle {ba5ckground-color:rgb(183, 217, 255); width: 78%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items:flex-start ; margin-left: 14px;}
+    .ToDo_List_Middle p:first-child {color:#474747; font-weight: bold; letter-spacing: 0.4px; font-size: 18px; margin: 0px; margin-bottom: 4px;}
+    .ToDo_List_Middle p {color:#b9b9b9; font-size: 14px; letter-spacing: 0.4px; margin: 0px;}
+
+    .ToDo_List_Right {back5ground-color:rgb(199, 198, 255); width: 8%; height: 100%; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 22px; border-radius: 10px;}
+    .ToDo_List_Right:hover {background-color:rgb(255, 115, 115); color:white;}
+
+    .Calculator {box-sizing: border-box;  overflow: hidden; back5ground-color: bisque; max-width: 250px; width: 100%; m5in-width: 200px; height: auto; border: 2px solid white; margin-left: 20px; margin-right: 0px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 10px; overflow: hidden;}
     .Calculator:hover {box-shadow: 0px 0px 10px 2px #c2c2c2; border: 2px solid #fffdfd; transition: 0.2s;}
     .panel {background: linear-gradient(to right, #FFC371, rgb(255, 72, 87)); width: 100%; height: auto; margin-left: 0px; margin-right: 0px; display: flex; flex-direction: column; justify-content: center; align-items: center;}
     .panel_high {backg6round-color: rgb(228, 227, 248); color: rgba(255, 255, 255, 0.712); font-family: 'Roboto', sans-serif; font-size: 16px; letter-spacing: 1.0px; width: 100%; height: 40px; margin: 0px; padding: 0px; border-left: 10px solid transparent; border-right: 6px solid transparent; display: flex; justify-content: flex-end; align-items: center; overflow: hidden;}
-    .panel_low {backgr4ound-color: rgb(200, 196, 255); color: white; font-family: 'Roboto', sans-serif; font-size: 40px; letter-spacing: 1.0px; font-weight:100; width: 100%; height: 60px; margin: 0px; padding: 0px; border-left: 6px solid transparent; border-right: 6px solid transparent; display: flex; justify-content: flex-end; align-items: center; overflow: hidden;}
+    .panel_low {backgr4ound-color: rgb(200, 196, 255); color: white; font-family: 'Roboto', sans-serif; font-size: 40px; letter-spacing: 1.0px; font-weight: 100; width: 100%; height: 60px; margin: 0px; padding: 0px; border-left: 6px solid transparent; border-right: 6px solid transparent; display: flex; justify-content: flex-end; align-items: center; overflow: hidden;}
     
     .buttons {background-color: white; color: rgb(107, 107, 107); width: 100%; height: auto; margin-left: 0px; margin-right: 0px; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;}
     .button_row {back6ground-color: transparent; bo6rder: 4px solid black;  width: 100%; height: auto; margin-left: 0px; margin-right: 0px; display: flex; justify-content: center; align-items: center;}
     .button {backg7round-color: rgb(250, 192, 120); bor5der: 4px solid black; font-family: 'Roboto', sans-serif; font-size: 22px; width: 25%; height: 64px; margin: 0px; padding: 0px; display: flex; justify-content: center; align-items: center;}
-    .button:hover {back7ground-color:rgb(233, 233, 233); cursor: pointer; box-shadow: 0px 0px 10px 2px #dddddd; border: 2px solid #bdbdbd; co5lor: #fffffff5; tra6nsition: 0.2s;}
+    .button:hover {back7ground-color:rgb(233, 233, 233); cursor: pointer; box-shadow: 0px 0px 10px 2px #dddddd; border: 2px solid #bdbdbd; color: #ff0000; tra6nsition: 0.2s;}
     #button_C, #button_del, #button_plus_minus, #button_divide, #button_multiply, #button_subtract, #button_add, #bu5tton_dot, #button_equals {background-color: #eeeeee;}
     
     #button_plus_minus, #button_divide, #button_multiply, #button_subtract, #button_add, #button_dot, #button_equals {font-size: 24px;}
     #button_C, #button_del {font-size: 20px;}
     #button_equals {width: 50%;}
 
+    .image_source_unsplash {bottom: 21px; right: 22px; height: fit-content; padding: 2px 4px !important; font-size: 11px !important; letter-spacing: 0.4px !important; position: absolute; background-color:#ffffff38 !important; color:rgba(255, 255, 255, 0.6) !important;}
+    .image_source_unsplash svg {fill:rgba(255, 255, 255, 0.6) !important;}
+    .image_source_unsplash:hover {background-color: rgba(0, 0, 0, 0.5) !important; color: white !important;}
+    .image_source_unsplash:hover svg {color: white !important; fill: white !important;}
+
   /* Media queries */
   
   @media screen and (max-width: 640px) {
             bo7dy {background-color:#e0e8ff;}
             .main_internal {flex-direction: column;}
-            .main {height: 900px;}
+            .main {height: 1000px;}
     } 
 
     </style>
@@ -64,7 +97,80 @@
         <img class="main_img" src="img/carlos-muza-hpjSkU2UYSU-unsplash.jpg" alt="Main section background photo">
         <div class="main_internal">
             <div class="ToDo">
-                
+                <div class="ToDo_Header">
+                    <div class="ToDo_Header_Left">
+                        <p>To</p>
+                        <p>Do</p>
+                        <p>List</p>
+                    </div>
+                    <div class="ToDo_Header_Middle">
+                        <p>
+                            <label>Type:</label>
+                            <select id="ToDoType">
+                                <option value="usa"></option>
+                                <option value="usa">House</option>
+                                <option value="usa">Car</option>
+                                <option value="usa">Dog</option>
+                                <option value="usa">Garden</option>
+                                <option value="usa">Work</option>
+                                <option value="usa">Leisure</option>
+                                <option value="usa">Meal</option>
+                                <option value="usa">Trip</option>
+                                <option value="usa">Other</option>
+                            </select>
+                            <p><label>Name:</label><input type="text"></p>
+                            <p><label>Deadline:</label><input type="date"></p>
+                        </p>
+                    </div>
+                    <div class="ToDo_Header_Right" title="Click to add a new task">
+                        <p>Add</p>
+                        <p>the</p>
+                        <p>task</p>
+                    </div>
+                </div>
+
+                <div class="ToDo_List List1">
+                    <div class="ToDo_List_Left">
+                        <i class="fas fa-car-side"></i>
+                        <p>Car</p>
+                    </div>
+                    <div class="ToDo_List_Middle">
+                        <p class="ToDo_List_Middle_Title">Wash the car</p>
+                        <p class="ToDo_List_Middle_Date">Today</p>
+                    </div>
+                    <div class="ToDo_List_Right">
+                        <i title="Delete the task" class="fas fa-times"></i>
+                    </div>
+                </div>
+
+                <div class="ToDo_List List2">
+                    <div class="ToDo_List_Left">
+                        <i class="fas fa-car-side"></i>
+                        <p>Car</p>
+                    </div>
+                    <div class="ToDo_List_Middle">
+                        <p class="ToDo_List_Middle_Title">Wash the car</p>
+                        <p class="ToDo_List_Middle_Date">Today</p>
+                    </div>
+                    <div class="ToDo_List_Right">
+                        <i title="Delete the task" class="fas fa-times"></i>
+                    </div>
+                </div>
+
+                <div class="ToDo_List List3">
+                    <div class="ToDo_List_Left">
+                        <i class="fas fa-car-side"></i>
+                        <p>Car</p>
+                    </div>
+                    <div class="ToDo_List_Middle">
+                        <p class="ToDo_List_Middle_Title">Wash the car</p>
+                        <p class="ToDo_List_Middle_Date">Today</p>
+                    </div>
+                    <div class="ToDo_List_Right">
+                        <i title="Delete the task" class="fas fa-times"></i>
+                    </div>
+                </div>
+
             </div>
             <div class="Calculator">
                 <div class="panel">
